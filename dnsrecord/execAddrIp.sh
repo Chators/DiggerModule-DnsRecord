@@ -10,7 +10,7 @@
 fileLog=$(mktemp reports/datasploitLog.XXXXXXXX);
 python domainOsint.py $1 -o json > $fileLog;
 fileJsonName=$(cat $fileLog | tail -n1 | cut -d ' ' -f5);
-python formatJson.py $fileJsonName $1
+python formatJsonAddrIp.py $fileJsonName $1
 cat $fileJsonName;
 rm $fileJsonName;
 rm $fileLog;
