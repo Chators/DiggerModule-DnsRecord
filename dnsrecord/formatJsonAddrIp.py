@@ -54,7 +54,7 @@ source = "DnsRecord - Obtenir adresse Ip"
 if "A Records" in a:
 	for element in a["A Records"]:
 		listJsonData.append(CreateJsonNode(element, source, "L\'adresse IpV4 du nom de domaine", "Adresse IpV4", [], True))
-if len(a["AAAA Records"]) != 0:
+if len(a["AAAA Records"]) > 0:
 	listJsonData.append(CreateJsonNode(a["AAAA Records"], source, "L\'adresse IpV6 du nom de domaine", "Adresse IpV6", [], True))
 
 # The json result

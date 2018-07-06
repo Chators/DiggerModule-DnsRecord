@@ -51,7 +51,7 @@ listJsonData = list()
 a = dict(data.domain_dnsrecords)
 
 source = "DnsRecord - Obtenir serveurs records"
-if "CNAME Records" in a:
+if len(a["CNAME Records"]) > 0:
 	listJsonData.append(CreateJsonNode(a["CNAME Records"], source, "L\'alias utilise par le serveur DNS", "Domain", [], True))
 if "Name Server Records" in a:
 	for element in a["Name Server Records"]:
